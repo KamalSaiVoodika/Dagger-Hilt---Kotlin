@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="salesOrderFormModel"
+            type="com.pos.ui.sales_order_form.SalesOrderFormViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent">
+
+            <RelativeLayout
+                android:id="@+id/rl_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@color/colorPrimaryDark">
+
+                <ImageView
+                    android:id="@+id/iv_drawer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="@{()->salesOrderFormModel.navigator.onCancelClick()}"
+                    android:src="@drawable/ic_side_drawer"
+                    app:tint="@color/colorWhite" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_notif"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?selectableItemBackground"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_notifications" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/riv_profile"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_demo_profile"
+                        app:riv_oval="true" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_create"
+                    style="@style/MediumTextBold"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:text="@string/new_order"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorWhite"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_main"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@color/colorAccent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/sales_order_form_bg"
+                android:paddingBottom="@dimen/_40sdp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/LargeTextBold"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:text="@string/sales_order"
+                    android:textColor="@color/colorBlack" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_customer_name"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_series"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/series"
+                                    android:inputType="none"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_business_partner"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                                    android:id="@+id/et_business_partner"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:hint="@string/business_partner"
+                                    android:inputType="none"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_contact_person"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_contact_person"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/contact_person"
+                                    android:inputType="none"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_currency"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_currency"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/currency"
+                                    android:inputType="none"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_sales_employee"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_sales_employee"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/sales_employee"
+                                    android:inputType="none"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <DatePicker
+                                android:id="@+id/date_Picker"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:calendarViewShown="false"
+                                android:datePickerMode="spinner"
+                                android:visibility="gone" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_posting_date"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorIndigoBlack"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/posting_date"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_posting_date"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:focusable="false" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_delivery_date"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/delivery_date"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_delivery_date"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_document_date"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/document_date"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_document_date"
+                                    style="@style/MediumTextBold"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/remarks"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:minLines="3" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_customer_ref_no"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/customer_ref_no"
+                                android:visibility="gone"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_customer_ref_no"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:background="@drawable/row_medicines_items_bg"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?selectableItemBackground"
+                                android:padding="@dimen/_10sdp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/items_txt"
+                                    style="@style/MediumTextBold"
+                                    android:layout_centerVertical="true"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:text="@string/str_items" />
+
+                                <Button
+                                    android:id="@+id/btn_new_order"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:padding="@dimen/_6sdp"
+                                    android:text="@string/add"
+                                    android:textAllCaps="false"
+                                    android:textAppearance="@style/SmallTextBold"
+                                    app:backgroundTint="@color/colorPrimaryDark"
+                                    app:cornerRadius="@dimen/_6sdp" />
+
+                            </RelativeLayout>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_total_before_discount"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/total_before_discount"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_total_before_discount"
+                                    style="@style/MediumTextBold"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_discount1"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/discount"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_discount1"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_tax"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/tax"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_tax"
+                                    style="@style/MediumTextBold"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_discount2"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/total"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_discount2"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_rounding"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:hint="@string/rounding"
+                                app:hintTextColor="@color/color_edit_txt_hint">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/et_rounding"
+                                    style="@style/MediumTextBold"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_ship_to"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_ship_to"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/ship_to"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:inputType="none"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_bill_to"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_bill_to"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/bill_to"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:inputType="none"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_shipping_type"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_shipping_type"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/shipping_type"
+                                    android:inputType="none"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_payment_terms"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:visibility="visible"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_payment_terms"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/payment_terms"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:inputType="none"
+                                    style="@style/MediumTextBold"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_payment_methods"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:visibility="visible"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_payment_methods"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/payment_methods"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:inputType="none"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_bp_project"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                app:helperTextTextAppearance="@style/MediumText">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/et_bp_project"
+                                    style="@style/MediumTextBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:dropDownHeight="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="@string/str_bp_project"
+                                    android:textColor="@color/colorIndigoBlack"
+                                    android:inputType="none"
+                                    android:textAppearance="@style/MediumText"
+                                    android:textColorHint="@color/colorBlack" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:background="@drawable/row_medicines_items_bg"
+                                android:backgroundTint="@color/colorGrayDark"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?selectableItemBackground"
+                                android:padding="@dimen/_12sdp">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/more"
+                                    style="@style/MediumTextBold"
+                                    android:layout_centerVertical="true"
+                                    android:text="@string/more"
+                                    android:textColor="@color/colorBlack" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_12sdp"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submit_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:onClick="@{()->salesOrderFormModel.navigator.onCreateOrder()}"
+                    android:text="@string/save"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

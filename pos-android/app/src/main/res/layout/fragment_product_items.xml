@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="myViewModel"
+            type="com.pos.ui.product_items.ProductItemsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_top_radius_bg">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/LargeTextBold"
+                        android:layout_centerVertical="true"
+                        android:text="@string/str_select_items"
+                        android:textColor="@color/colorIndigoBlack" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_new_sale"
+                        style="@style/OrangeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/str_done"
+                        android:textAppearance="@style/MediumText"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:background="@drawable/rounded_edittext_states"
+                    android:elevation="@dimen/_5sdp"
+                    android:hint="@string/str_search" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tsp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

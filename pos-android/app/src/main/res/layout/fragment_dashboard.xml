@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="myViewModel"
+            type="com.pos.ui.dashboard.DashboardViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_top_radius_bg">
+
+        <FrameLayout
+            android:id="@+id/fl_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/LargeTextBold"
+                        android:layout_centerVertical="true"
+                        android:text="@string/dashboard"
+                        android:textColor="@color/colorIndigoBlack" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_new_sale"
+                        style="@style/OrangeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:onClick="@{()->myViewModel.navigator.onCreateSales()}"
+                        android:text="@string/new_sale"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1"
+
+                        android:background="@drawable/primary_radius_bg"
+                        android:padding="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_sales"
+                            style="@style/MediumTextBold"
+                            android:text="@string/sales"
+                            android:textColor="@color/colorWhite" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_sales"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="30">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_shrinking_graph" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="70"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tv_amount_sales"
+                                    style="@style/BigLargeTextBold"
+                                    android:layout_gravity="end"
+                                    android:gravity="end"
+                                    android:maxLines="1"
+                                    android:text="$ 23,51"
+                                    android:textColor="@color/colorWhite" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/ic_filled_arrow_top" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tv_percentage_sales"
+                                        style="@style/VerySmallText"
+                                        android:layout_gravity="end"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:gravity="end"
+                                        android:text="1,02%"
+                                        android:textColor="@color/colorWhite" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/primary_radius_bg"
+                        android:padding="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_orders"
+                            style="@style/MediumTextBold"
+                            android:text="@string/orders"
+                            android:textColor="@color/colorWhite" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_orders"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="30">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_shrinking_graph" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="70"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/tv_order_orders"
+                                    style="@style/BigLargeTextBold"
+                                    android:layout_gravity="end"
+                                    android:gravity="end"
+                                    android:maxLines="1"
+                                    android:text="+ 356"
+                                    android:textColor="@color/colorWhite" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/ic_filled_arrow_top" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:id="@+id/tv_percentage_orders"
+                                        style="@style/VerySmallText"
+                                        android:layout_gravity="end"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:gravity="end"
+                                        android:text="05%"
+                                        android:textColor="@color/colorWhite" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_sales_summary"
+                            style="@style/MediumTextBold"
+                            android:text="@string/sales_summary"
+                            android:textColor="@color/colorIndigoBlack" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/SmallTextBold"
+                                        android:layout_centerInParent="true"
+                                        android:text="$ 2,000"
+                                        android:textColor="@color/colorIndigoBlack" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/SmallTextBold"
+                                        android:layout_centerInParent="true"
+                                        android:text="$ 1,500"
+                                        android:textColor="@color/colorIndigoBlack" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/SmallTextBold"
+                                        android:layout_centerInParent="true"
+                                        android:text="$ 1,000"
+                                        android:textColor="@color/colorIndigoBlack" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/SmallTextBold"
+                                        android:layout_centerInParent="true"
+                                        android:text="$ 400"
+                                        android:textColor="@color/colorIndigoBlack" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/SmallTextBold"
+                                        android:layout_centerInParent="true"
+                                        android:text="$ 200"
+                                        android:textColor="@color/colorIndigoBlack" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <com.hadiidbouk.charts.ChartProgressBar
+                                android:id="@+id/chart_progress_bar"
+                                style="@style/SmallTextBold"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                app:hdBarCanBeClick="false"
+                                app:hdBarHeight="@dimen/_170sdp"
+                                app:hdBarRadius="@dimen/_10sdp"
+                                app:hdBarTitleColor="@color/bar_title_color"
+                                app:hdBarTitleMarginTop="@dimen/_9sdp"
+                                app:hdBarTitleSelectedColor="@color/progress_click"
+                                app:hdBarTitleTxtSize="@dimen/_12sdp"
+                                app:hdBarWidth="@dimen/_7sdp"
+                                app:hdEmptyColor="@color/colorGrayDark"
+                                app:hdMaxValue="10"
+                                app:hdPinBackgroundColor="@color/pin_background"
+                                app:hdPinDrawable="@drawable/ic_orders"
+                                app:hdPinTextColor="@color/pin_text"
+                                app:hdProgressClickColor="@color/progress_click"
+                                app:hdProgressColor="@color/colorIndigo"
+                                app:hdProgressDisableColor="@color/progress_disable" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_margin="@dimen/_12sdp"
+                    android:scrollbars="none"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            app:cardBackgroundColor="@color/colorLightViolet"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:onClick="@{()->myViewModel.navigator.onOrdersClick()}"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:src="@drawable/ic_orders" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SmallTextBold"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:text="@string/orders"
+                                    android:textColor="@color/colorIndigo" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            app:cardBackgroundColor="@color/colorLightYellow"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:onClick="@{()->myViewModel.navigator.onCustomersClick()}"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:src="@drawable/ic_customers" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SmallTextBold"
+                                    android:singleLine="true"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:text="@string/customers"
+                                    android:textColor="@color/colorIndigo" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            app:cardBackgroundColor="@color/colorLightPink"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:onClick="@{()->myViewModel.navigator.onInVentoryClick()}"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:src="@drawable/ic_inventory" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SmallTextBold"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:text="@string/inventory"
+                                    android:textColor="@color/colorIndigo" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            app:cardBackgroundColor="@color/colorLightBlue"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:onClick="@{()->myViewModel.navigator.onInVoiceClick()}"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_12sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:src="@drawable/ic_invoice" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/SmallTextBold"
+                                    android:layout_marginStart="@dimen/_6sdp"
+                                    android:text="@string/invoice"
+                                    android:textColor="@color/colorIndigo" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/LargeTextBold"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@string/top_selling_products"
+                    android:textColor="@color/colorIndigoBlack" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tsp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

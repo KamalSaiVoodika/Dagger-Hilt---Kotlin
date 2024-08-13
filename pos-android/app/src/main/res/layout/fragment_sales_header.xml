@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="myViewModel"
+            type="com.pos.ui.sales_header.SalesHeaderViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp">
+
+                        <LinearLayout
+                            android:id="@+id/llt_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_toLeftOf="@+id/llt_right"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/llt_titles"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/MediumTextBold"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="6719"
+                                    android:textColor="@color/colorIndigoBlack" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/LargeTextBold"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginEnd="@dimen/_4sdp"
+                                    android:text="-"
+                                    android:textColor="@color/colorIndigoBlack" />
+
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/MediumTextBold"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:singleLine="true"
+                                    android:text="Microchips"
+                                    android:textColor="@color/colorIndigoBlack" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/MediumTextBold"
+                                    android:text="Delivery Date : 2022-08-01"
+                                    android:textColor="@color/colorFullGrayDark" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llt_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:gravity="end"
+                                android:text="Open"
+                                android:textColor="@color/colorAccent" />
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/applied_amount"
+                                android:textColor="@color/colorFullGrayDark" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:text="0.00$"
+                                android:textColor="@color/colorIndigoBlack" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:text="@string/balance_due"
+                                android:textColor="@color/colorFullGrayDark" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:singleLine="true"
+                                android:text="0.00$"
+                                android:textColor="@color/colorIndigoBlack" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:onClick="@{()->myViewModel.navigator.onAllItemClick()}"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/MediumTextBold"
+                            android:text="Item (05)"
+                            android:textColor="@color/colorIndigoBlack" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/MediumTextBold"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:text="@string/click_to_view_all_items"
+                            android:textColor="@color/colorFullGrayDark" />
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/total_before_discount"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="13.00"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/discount"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="13.00"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/discount_without_percent"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="7,742.28 $"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_3sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/tax"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="1,435.25 $"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/total"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="53,565.97 $ (Total Gross 61,678.95 $)"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/rounding"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+android:layout_marginTop="@dimen/_3sdp"
+                                android:text="0.00 $"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/series"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="primary"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/document_date"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="133"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/customer"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="c2y3839"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/contact_person"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="primary"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/phone"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="primary"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/sales_employee"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="primary"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/document_date"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="primary"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/posting_date"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="primary"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/remarks"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="eskjbfdnrdnrb iojenjrdg  "
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="@string/customer_ref_no"
+                                android:textColor="@color/colorFullGrayDark" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:text="7349830cv"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="Activities"
+                                android:textColor="@color/colorIndigoBlack" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_6sdp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/MediumTextBold"
+                                android:text="Attachment"
+                                android:textColor="@color/colorIndigoBlack" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+
+</layout>

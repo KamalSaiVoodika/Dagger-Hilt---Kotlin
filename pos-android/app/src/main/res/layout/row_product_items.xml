@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_4sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/riv_profile"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_demo_paracetamol"
+                app:riv_border_color="@color/colorGray"
+                app:riv_border_width="@dimen/_1sdp"
+                app:riv_corner_radius="@dimen/_6sdp"
+                app:riv_oval="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_toStartOf="@+id/ll_cart"
+                android:layout_toEndOf="@+id/riv_profile"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name"
+                    style="@style/MediumTextBold"
+                    android:text="Paracetamol - 100mg"
+                    android:textColor="@color/colorIndigoBlack" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_amount"
+                    style="@style/MediumTextBold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="$ 120"
+                    android:textColor="@color/colorIndigoBlack" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_minus_cart"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/cart_plus_minus_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_minus"
+                        style="@style/MediumTextBold"
+                        android:layout_centerInParent="true"
+                        android:text="-"
+                        android:textColor="@color/colorWhite" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_count_cart"
+                    style="@style/MediumTextBold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:text="01"
+                    android:textColor="@color/colorIndigoBlack" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_plus_cart"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/cart_plus_minus_bg"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_plus"
+                        style="@style/MediumTextBold"
+                        android:layout_centerInParent="true"
+                        android:text="+"
+                        android:textColor="@color/colorWhite" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

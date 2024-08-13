@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/color_view_margin" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/LargeTextBold"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/cancel_order"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:textColor="@color/selected_items_txt_color" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/LargeTextBold"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/duplicate"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:textColor="@color/selected_items_txt_color" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/LargeTextBold"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/copy_to_order"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:textColor="@color/selected_items_txt_color" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/LargeTextBold"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/Pdf"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:textColor="@color/selected_items_txt_color" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_cancel"
+                style="@style/LargeTextBold"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/cancel"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:textColor="@color/selected_items_txt_color" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

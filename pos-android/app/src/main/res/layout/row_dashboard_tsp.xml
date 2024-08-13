@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/_6sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/riv_profile"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_demo_paracetamol"
+                app:riv_border_color="@color/colorGray"
+                app:riv_border_width="@dimen/_1sdp"
+                app:riv_corner_radius="@dimen/_6sdp"
+                app:riv_oval="false" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name"
+                    style="@style/SmallTextBold"
+                    android:singleLine="true"
+                    android:text="Paracetamol - 100mg"
+                    android:textColor="@color/colorIndigoBlack" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_amount"
+                    style="@style/MediumTextBold"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="$ 120"
+                    android:textColor="@color/colorIndigoBlack" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

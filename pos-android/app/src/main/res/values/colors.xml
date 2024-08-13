@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6741F5</color>
+    <color name="colorPrimaryDark">#5946B2</color>
+    <color name="colorAccent">#5946B2</color>
+    <color name="colorDarkYellow">#B8870B</color>
+    <color name="colorLightViolet">#EEE8FC</color>
+    <color name="colorLightYellow">#EFFAD0</color>
+    <color name="colorLightBlue">#E8FDFD</color>
+    <color name="colorLightPink">#FBEEE9</color>
+    <color name="colorLightDarkBlack">#556266</color>
+    <color name="colorIndigo">#2A434A</color>
+    <color name="colorIndigoBlack">#0D1C4C</color>
+
+    <color name="colorEditText">#707070</color>
+    <color name="colorButtonBlue">#35588a</color>
+    <color name="colorButtonBlueLight">#92a2ae</color>
+    <color name="colorBlue">#5863F8</color>
+    <color name="colorBlue2">#589dff</color>
+    <color name="colorRed">#ff2828</color>
+    <color name="colorRed2">#e34343</color>
+    <color name="colorBlueLight">#348aff</color>
+    <color name="colorYellow">#FFCC33</color>
+    <color name="colorBlackDark">#494847</color>
+    <color name="colorBlack">@android:color/black</color>
+    <color name="colorBg">#efefef</color>
+
+    <color name="colorLiteGreen">#dbeae7</color>
+    <color name="colorLiteRed">#eedede</color>
+
+    <color name="colorWhite">#FFF</color>
+    <color name="colorGray">#F6F6F6</color>
+    <color name="colorLiteGray">#E4E4E4</color>
+    <color name="colorLiteBlue">#6398cd</color>
+
+    <color name="colorBlackDip">#333333</color>
+    <color name="colorBlackMedium">#5f5f5f</color>
+    <color name="colorBlackLight">#9F9F9F</color>
+
+    <color name="colorDarkBlue">#000e25</color>
+    <color name="colorGreen">#358a7a</color>
+    <color name="colorGreen2">#2db99e</color>
+    <color name="colorOnSwitch">#9dc179</color>
+    <color name="colorOffSwitch">#696969</color>
+    <color name="colorTrackSwitch">#d5d5d5</color>
+    <color name="colorFAB">#d2471a</color>
+    <color name="colorCancelButton">#707070</color>
+    <color name="colorLoginButton">#B8870B</color>
+
+    <color name="colorGrayDark">#D3D0D0</color>
+    <color name="colorFullGrayDark">#B8B6B6</color>
+
+    <color name="color_sales_order_txt">#0D1C4C</color>
+    <color name="color_edit_txt_hint">#0E1E4B</color>
+    <color name="color_sales_order_button">#5946B2</color>
+    <color name="color_view_margin">#CECFD1</color>
+    <color name="selected_items_txt_color">#0D1C4C</color>
+
+</resources>

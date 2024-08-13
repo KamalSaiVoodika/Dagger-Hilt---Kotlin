@@ -1,0 +1,308 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorBlackLight</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="TransparentStatusBar" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="DatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorBlackLight</item>
+    </style>
+
+    <!--BIG LARGE-->
+    <style name="BigLargeText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontPath">fonts/Avenir-Book.ttf</item>
+    </style>
+
+    <style name="BigLargeTextBold" parent="BigLargeText">
+        <item name="fontPath">fonts/Avenir-Heavy.ttf</item>
+    </style>
+
+    <style name="BigLargeTextMedium" parent="BigLargeText">
+        <item name="fontPath">fonts/Avenir-Medium.ttf</item>
+    </style>
+
+    <style name="BigLargeTextLight" parent="BigLargeText">
+        <item name="android:textColor">@color/colorBlackLight</item>
+    </style>
+
+    <style name="BigLargeTextWhite" parent="BigLargeText">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="BigLargeTextBlue" parent="BigLargeText">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+
+    <!--END BIG LARGE-->
+
+    <!--LARGE-->
+    <style name="LargeText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontPath">fonts/Avenir-Book.ttf</item>
+    </style>
+
+    <style name="LargeTextBold" parent="LargeText">
+        <item name="fontPath">fonts/Avenir-Heavy.ttf</item>
+    </style>
+
+    <style name="LargeTextBoldWhite" parent="LargeTextBold">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="LargeTextMedium" parent="LargeText">
+        <item name="fontPath">fonts/Avenir-Medium.ttf</item>
+    </style>
+
+    <style name="LargeTextLight" parent="LargeText">
+        <item name="android:textColor">@color/colorBlackLight</item>
+    </style>
+
+    <style name="LargeTextWhite" parent="LargeText">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="LargeTextBlue" parent="LargeText">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+
+    <!--END LARGE-->
+
+    <!--MEDIUM-->
+
+    <style name="MediumText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontPath">fonts/Avenir-Book.ttf</item>
+    </style>
+
+    <style name="MediumTextBold" parent="MediumText">
+        <item name="fontPath">fonts/Avenir-Heavy.ttf</item>
+    </style>
+
+    <style name="MediumTextMedium" parent="MediumText">
+        <item name="fontPath">fonts/Avenir-Medium.ttf</item>
+    </style>
+
+    <style name="MediumTextBoldWhite" parent="MediumTextBold">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MediumTextLight" parent="MediumText">
+        <item name="android:textColor">@color/colorBlackLight</item>
+    </style>
+
+    <style name="MediumTextWhite" parent="MediumText">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="MediumTextBlue" parent="MediumText">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+
+    <!--END MEDIUM-->
+
+    <!--Collapsing Toolbar Style-->
+    <declare-styleable name="CollapsingTitleLayout">
+        <attr name="expandedMargin" format="reference|dimension" />
+        <attr name="expandedMarginStart" format="reference|dimension" />
+        <attr name="expandedMarginBottom" format="reference|dimension" />
+        <attr name="expandedMarginEnd" format="reference|dimension" />
+        <attr name="expandedTextSize" format="reference|dimension" />
+        <attr name="collapsedTextSize" format="reference|dimension" />
+        <attr name="android:textAppearance" />
+        <attr name="textSizeInterpolator" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CollapsingTextAppearance">
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+    </declare-styleable>
+    <!--Collapsing Toolbar Style-->
+
+    <!--SMALL-->
+    <style name="SmallText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontPath">fonts/Avenir-Book.ttf</item>
+    </style>
+
+    <style name="SmallTextBold" parent="SmallText">
+        <item name="fontPath">fonts/Avenir-Heavy.ttf</item>
+    </style>
+
+    <style name="SmallTextWhite" parent="SmallText">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="SmallTextBlue" parent="SmallText">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+
+    <style name="SmallTextMedium" parent="LargeText">
+        <item name="fontPath">fonts/Avenir-Medium.ttf</item>
+    </style>
+
+    <!--END SMALL-->
+
+    <!--VERY SMALL-->
+    <style name="VerySmallText">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontPath">fonts/Avenir-Book.ttf</item>
+    </style>
+
+    <style name="VerySmallTextBold" parent="VerySmallText">
+        <item name="fontPath">fonts/Avenir-Heavy.ttf</item>
+    </style>
+
+    <style name="VerySmallTextMedium" parent="VerySmallText">
+        <item name="fontPath">fonts/Avenir-Medium.ttf</item>
+    </style>
+
+    <style name="VerySmallTextLight" parent="VerySmallText">
+        <item name="android:textColor">@color/colorBlackLight</item>
+    </style>
+
+    <style name="VerySmallTextWhite" parent="VerySmallText">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="VerySmallTextBlue" parent="VerySmallText">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+
+    <!--END SMALL-->
+
+    <style name="MoreStyle" parent="MediumTextBlue">
+        <item name="android:layout_marginLeft">@dimen/_10sdp</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+    </style>
+
+    <style name="ViewStyle">
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="AppThemeButton" parent="MediumText">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/button_app_theme</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="fontPath">fonts/Avenir-Medium.ttf</item>
+    </style>
+
+    <style name="OrangeButton" parent="MediumText">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/button_orange_theme</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="fontPath">fonts/Avenir-Medium.ttf</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--switch_style-->
+    <style name="ColorDriverSwitchStyle">
+        <item name="colorControlActivated">@color/colorOnSwitch</item>
+        <item name="colorSwitchThumbNormal">@color/colorOffSwitch</item>
+        <item name="android:colorForeground">@color/colorTrackSwitch</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+        <item name="boxStrokeErrorColor">@color/colorRed</item>
+    </style>
+
+    <style name="CustomCheckBoxSelectItem" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_selector_select_items</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/drawable_rounded_dialog</item>
+    </style>
+
+    <style name="CustomPopUpStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:itemBackground">@color/colorPrimaryDark</item>
+    </style>
+
+</resources>
